@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CudaCompile Include="kernel.cu" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="easyBMP">
+      <UniqueIdentifier>{a7cdfa75-0fa9-44b2-be00-5ba3ed9ba89c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="easyBMP\EasyBMP.cpp">
+      <Filter>easyBMP</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="easyBMP\EasyBMP.h">
+      <Filter>easyBMP</Filter>
+    </ClInclude>
+    <ClInclude Include="easyBMP\EasyBMP_BMP.h">
+      <Filter>easyBMP</Filter>
+    </ClInclude>
+    <ClInclude Include="easyBMP\EasyBMP_DataStructures.h">
+      <Filter>easyBMP</Filter>
+    </ClInclude>
+    <ClInclude Include="easyBMP\EasyBMP_VariousBMPutilities.h">
+      <Filter>easyBMP</Filter>
+    </ClInclude>
+    <ClInclude Include="vec3.h" />
+    <ClInclude Include="ray.h" />
+    <ClInclude Include="sphere.h" />
+    <ClInclude Include="object.h" />
+    <ClInclude Include="camera.h" />
+  </ItemGroup>
+</Project>
