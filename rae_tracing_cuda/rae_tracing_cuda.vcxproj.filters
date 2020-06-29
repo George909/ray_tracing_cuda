@@ -31,5 +31,7 @@
     <ClInclude Include="sphere.h" />
     <ClInclude Include="object.h" />
     <ClInclude Include="camera.h" />
+    <ClInclude Include="light_source.h" />
+    <ClInclude Include="material.h" />
   </ItemGroup>
 </Project>

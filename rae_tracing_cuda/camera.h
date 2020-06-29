@@ -7,20 +7,30 @@
 #include "ray.h"
 class camera {
 protected:
-	vec3 position;
-	vec3 lower_left_corner;
-	vec3 horizontal;
-	vec3 vertical;	
+	vec3 position; // &
+
+	float aspect_ratio;
+	float alpha;
+	float height;
+	float width;
 public:
 
-	__host__ __device__ camera(vec3 position, int size_x, int size_y)
-		: position{ position }
+	__host__ __device__ camera(vec3 position, float size_x, float size_y)
+		: position { position }
+		, alpha {45.f}
+		, height {size_y}
+		, width { size_x}  
 	{
-		lower_left_corner = vec3(-size_x / 2., -size_y / 2.f, -1);
-		horizontal = vec3(size_x, 0, 0);
-		vertical = vec3(0, size_y, 0);
+		this->aspect_ratio = width / height;
 	}
 	__host__ __device__ ray getRay(float x, float y) const {
-		return ray(position, lower_left_corner + x * horizontal + y * vertical);
+
+		float coef = std::tan(alpha / 360 * 3.14f);
+		float ccs_x = (2 * x - 1) * this->aspect_ratio * coef;
+		float ccs_y = (1 - 2 * y) * coef;
+		vec3 dir = {ccs_x, ccs_y, -1};
+		dir = dir.normalized();
+
+		return ray(position, dir, 0);
 	};
 };
