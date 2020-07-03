@@ -49,7 +49,7 @@ Time GPU: 100 ms
 | CPU | Intel Core i7-3770 CPU 3.40GHz|
 | GPU | NVIDIA GeForce GTX 770        |
 | RAM | 16 Gb                         |
-| OS  | Windows 10 Proffesional       | 
+| OS  | Windows 10 Professional       | 
 
 
 ## GPU vs CPU
