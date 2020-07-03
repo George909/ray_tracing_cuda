@@ -34,4 +34,7 @@
     <ClInclude Include="light_source.h" />
     <ClInclude Include="material.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md" />
+  </ItemGroup>
 </Project>

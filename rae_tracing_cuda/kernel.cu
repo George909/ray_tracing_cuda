@@ -14,6 +14,7 @@
 #include <vector>
 #include <random>
 #include <ctime>
+#include <chrono>
 
 
 int gcd(int a, int b);
@@ -51,13 +52,23 @@ int main(int argc, char** argv)
 
   create_scene_cpu(spheres, sources, number_of_objects, number_of_juches);
 
+
+  auto start = std::chrono::steady_clock::now();
   cudaError_t cudaStatus = ray_tracing_gpu(colors.data(), spheres, sources, x_size, y_size, number_of_objects, number_of_juches, cam);
   if (cudaStatus != cudaSuccess) {
     fprintf(stderr, "Ray Tracing failed!");
     return 1;
   }
-
+  auto end = std::chrono::steady_clock::now();
+  auto time_gpu = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
+  
+  start = std::chrono::steady_clock::now();
   ray_tracing_cpu(cpu_colors.data(), spheres, sources, x_size, y_size, number_of_objects, number_of_juches, cam);
+  end = std::chrono::steady_clock::now();
+  auto time_cpu = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
+
+  std::cout << "Time CPU: " << time_cpu.count() << " ms" << std::endl;
+  std::cout << "Time GPU: " << time_gpu.count() << " ms" << std::endl;
 
   for (int i = 0; i < x_size; i++) {
     for (int j = 0; j < y_size; j++) {
@@ -326,6 +337,5 @@ void create_scene_cpu(sphere* sph, light_source* src, int number_of_objects, int
 }
 
 __global__ void create_scene_gpu(sphere* sph, light_source* src, int number_of_objects, int number_of_sources) {
-
 
 }
