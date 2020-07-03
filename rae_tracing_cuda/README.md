@@ -4,7 +4,7 @@
 
 ## Описание программы
 
-Программа принимает на вход количество сфер, поличество источников света,
+Программа принимает на вход количество сфер, количество источников света,
 размер изображения и имя файла для сохранения. 
 
 ```
@@ -21,6 +21,26 @@ PS C:\Users\Admin\source\repos\George909\ray_tracing_cuda\x64\Release> .\rae_tra
 Time CPU: 1088 ms
 Time GPU: 116 ms
 ```
+
+## Пример работы
+
+```
+PS C:\Users\Admin\source\repos\George909\ray_tracing_cuda\x64\Release> .\rae_tracing_cuda.exe 5 3 1200x600 img
+Time CPU: 76 ms
+Time GPU: 78 ms
+```
+
+![Иллюстрация к проекту](https://github.com/George909/ray_tracing_cuda/master/img/img_1200x600.bmp)
+
+```
+PS C:\Users\Admin\source\repos\George909\ray_tracing_cuda\x64\Release> .\rae_tracing_cuda.exe 10 5 1900x1900 img
+Time CPU: 823 ms
+Time GPU: 100 ms
+```
+
+![Иллюстрация к проекту](https://github.com/George909/ray_tracing_cuda/master/img/img_1900x1900.bmp)
+
+
 
 ## Конфигурация системы
 
