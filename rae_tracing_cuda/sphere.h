@@ -56,7 +56,7 @@ public:
  		return ray(pos, dir, 0);
 	}
 
-	__host__ __device__ vec3 reflectiveDir(vec3 &dir, vec3 &point) const {
+	__host__ __device__ vec3 reflectedDir(vec3 &dir, vec3 &point) const {
 		vec3 n = this->normal(point);
 		vec3 direction = dir - 2.f * vec3::dot(dir, n) * n;
 		return direction;

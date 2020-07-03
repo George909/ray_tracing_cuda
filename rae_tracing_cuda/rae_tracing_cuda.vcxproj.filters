@@ -29,7 +29,6 @@
     <ClInclude Include="vec3.h" />
     <ClInclude Include="ray.h" />
     <ClInclude Include="sphere.h" />
-    <ClInclude Include="object.h" />
     <ClInclude Include="camera.h" />
     <ClInclude Include="light_source.h" />
     <ClInclude Include="material.h" />

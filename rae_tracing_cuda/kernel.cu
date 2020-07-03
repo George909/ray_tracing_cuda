@@ -263,7 +263,7 @@ __device__ __host__ vec3 color(ray r,sphere* sph,light_source* src,int number_of
       float max = (dot > 0) ? dot : 0;
       diffuse_light_intensity += src[i].i() * max;
 
-      vec3 raflection_light_dir = s->reflectiveDir(light_dir, point);
+      vec3 raflection_light_dir = s->reflectedDir(light_dir, point);
       dot = vec3::dot(raflection_light_dir, current_ray.dir());
       max = (dot > 0) ? dot : 0;
       specular_light_intensity += src[i].i() * pow(max, static_cast<float>(s->material().get_spec()));

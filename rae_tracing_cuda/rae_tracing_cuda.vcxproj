@@ -93,7 +93,6 @@
     <ClInclude Include="easyBMP\EasyBMP_VariousBMPutilities.h" />
     <ClInclude Include="light_source.h" />
     <ClInclude Include="material.h" />
-    <ClInclude Include="object.h" />
     <ClInclude Include="ray.h" />
     <ClInclude Include="sphere.h" />
     <ClInclude Include="vec3.h" />
